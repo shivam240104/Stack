@@ -25,18 +25,34 @@ public class Question {
         }
         return result.toString();
     }
+
+    // Question 3 reverse of a Stack
+    public static void reverseStack(Stack<Integer>s){
+        if(s.isEmpty()){
+            return;
+        }
+        int top = s.pop();
+        reverseStack(s);
+        pushAtBottom(s, top);
+    }
+    public static void printStack(Stack<Integer>s){
+        while(!s.isEmpty()){
+            System.out.println(s.pop());
+        }
+    }
     public static void main(String[] args) {
-        // Stack<Integer> s = new Stack<>();
-        // s.push(1);
-        // s.push(2);
-        // s.push(3);
-        // s.push(4);
-       
+        Stack<Integer> s = new Stack<>();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        s.push(4);
+       reverseStack(s);
+       printStack(s);
         // pushAtBottom(s,5);
         // while(!s.isEmpty()){
         //     System.out.println(s.pop());
         // }
-        String str="Shivam";
-        System.out.println(reverseString(str));
+        // String str="Shivam";
+        // System.out.println(reverseString(str));
     }
 }

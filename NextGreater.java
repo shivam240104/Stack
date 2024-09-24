@@ -2,11 +2,11 @@ import java.util.Stack;
 
 public class NextGreater {
     public static void main(String[] args) {
-        int arr[]={3,2,5,8,7,9};
+        int arr[]={9,5,3,2,1,6};
         Stack<Integer>s=new Stack<>();
         int NxtGreater[]= new int[arr.length];
 
-        for(int i=arr.length-1;i>=0;i--){
+        for(int i=0;i<arr.length;i++){
             while(!s.empty() && arr[s.peek()]<=arr[i]){
                 s.pop();
             }
